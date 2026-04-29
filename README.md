@@ -20,6 +20,21 @@ Extract a Squad SDK (UE4) map and recreate it in UE5 with a clean asset base. Th
 
 The exported data includes actor positions, foliage instances, landscape heightmaps, spline paths, decals, and volumes — but not assets themselves. This approach gives you a blank canvas where every asset and material is chosen fresh for UE5, rather than carrying over converted UE4 assets.
 
+## Direct Import vs This Workflow
+
+| Category | Direct UE4 -> UE5 Import | This Toolkit (Reference Rebuild) |
+|---|---|---|
+| Primary goal | Fast project conversion | Clean UE5-native rebuild |
+| Asset transfer | Migrates legacy assets | Transfers layout/reference data only |
+| Materials | Mostly preserved from UE4 | Re-authored with UE5 materials |
+| Blueprints/logic | Carried forward (may need fixes) | Not migrated by design |
+| Initial speed | Faster to get something running | Slower at first |
+| Long-term quality | Can include legacy baggage | Encourages UE5-first decisions |
+| Artist control | Moderate (inherits old setup) | High (rebuild intentionally) |
+| Best use case | Quick port / compatibility | Full modernization for UE5 |
+
+If your goal is to ship a quick UE5 port, direct import is usually better. If your goal is to rebuild maps to fully leverage UE5 features (Nanite/Lumen/modern foliage workflows), this reference-driven approach is often more suitable.
+
 ## Files
 
 | File | Purpose |
